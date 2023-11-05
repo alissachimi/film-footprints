@@ -2,12 +2,8 @@ from flask import Flask, send_file, render_template, request, redirect, session,
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def home():
-    if(request.method=='POST'):
-        #do something
-        print('hi')
-    
     return render_template('home.html')
 
 @app.route('/maps')
@@ -20,4 +16,4 @@ def game():
 
 
 if __name__ == '__main__':
-   app.run(debug=True, host='0.0.0.0', port=80)
+   app.run()
